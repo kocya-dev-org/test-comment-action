@@ -12,7 +12,7 @@ jobs:
   comment:
     if: github.event_name == 'issue_comment' &&
         contains(github.event.comment.html_url, '/pull/') && 
-        startsWith(github.event.comment.body, '@devin') )
+        startsWith(github.event.comment.body, '@devin')
     runs-on: ubuntu-latest
     steps:
     - run: echo "input comment (${{ github.event.comment.body }})"
