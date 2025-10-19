@@ -1,0 +1,18 @@
+name: "comment display"
+
+on: 
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  display:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo ${{github.event}}
+  comment:
+    if: github.event_name == 'issue_comment' &&
+        contains(github.event.comment.html_url, '/pull/') && 
+        startsWith(github.event.comment.body, '@devin') )
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "input comment (${{ github.event.comment.body }})"
