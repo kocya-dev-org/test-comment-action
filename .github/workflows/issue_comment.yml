@@ -2,7 +2,7 @@ name: comment display
 
 on: 
   issue_comment:
-    types: [created, edited]
+    types: [created] # コメント新規記入時のみ。編集(edited)では動かさない
 
 jobs:
   display:
