@@ -8,7 +8,7 @@ jobs:
   display:
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{github.event}}
+    - run: echo ${{toJSON(github.event)}}
   comment:
     if: github.event_name == 'issue_comment' &&
         contains(github.event.comment.html_url, '/pull/') && 
