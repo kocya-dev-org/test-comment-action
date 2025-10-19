@@ -1,4 +1,4 @@
-name: "comment display"
+name: comment display
 
 on: 
   issue_comment:
