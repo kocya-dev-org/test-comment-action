@@ -12,8 +12,9 @@ jobs:
       - run: echo '${{toJSON(github.event)}}'
 
   comment:
+    # issue_commentへのコメントで@devinから始まるかどうか
     if: github.event_name == 'issue_comment' &&
-        contains(github.event.comment.html_url, '/pull/') && 
+        contains(github.event.comment.html_url, '/issues/') && 
         startsWith(github.event.comment.body, '@devin')
     runs-on: ubuntu-latest
     steps:
